@@ -9,7 +9,6 @@ Chatgpt assisted with creating lists of nouns verbs and adjectives. everything e
 
 """
 import random
-import pytest
 
 
 noun_list = [
@@ -58,29 +57,33 @@ Suddenly, the [noun] started [verb ending in -ing], and they all screamed and ra
 
 """
 def mad_lib_one():
-    print("")
+    print("1")
 
 def mad_lib_two():
-    print("")
+    print("2")
 
 def mad_lib_three():
-    print("")
+    print("3")
 
 
 def main():
     t = True
-    while t == True:
-        mad_lib_choice = input("Enter a number 1 ,2 or 3:")
-        if mad_lib_choice is int and mad_lib_choice < 4 and mad_lib_choice > 0:
-            if mad_lib_choice == 1:
-                mad_lib_one()
-                t = False
-            elif mad_lib_choice == 2:
-                mad_lib_two()
-                t = False
-            else:
-                mad_lib_three()
-                t = False
+    while t:
+        try:
+            mad_lib_choice = int(input("Enter a number 1 ,2 or 3:"))
+            if mad_lib_choice < 4 and mad_lib_choice > 0:
+                if mad_lib_choice == 1:
+                    mad_lib_one()
+                    break
+                elif mad_lib_choice == 2:
+                    mad_lib_two()
+                    break
+                else:
+                    mad_lib_three()
+                    break
+        except Exception as e:
+            print("well the problem is that there is an " + str(e) + " is not a number!")
+            
 
 
 
