@@ -1,7 +1,7 @@
 """
 Random Quote Generator Script 
 Start Time: 9:14pm
-Finish Time:
+Finish Time:10:15pm
 
 Objective: Create a Random Quote Generator with as much creativity as possible.
 
@@ -21,70 +21,47 @@ noun_list = [
 ]
 
 
-verb_list = [
-    "Accept", "Ache", "Acknowledge", "Act", "Add", "Admire", "Admit", "Admonish", "Adopt", "Advise",
-    "Affirm", "Afford", "Agree", "Ail", "Alert", "Allege", "Allow", "Allude", "Amuse", "Analyze",
-    "Announce", "Annoy", "Answer", "Apologize", "Appeal", "Appear", "Applaud", "Appreciate", "Approve", "Argue",
-    "Arrange", "Arrest", "Arrive", "Articulate", "Ask", "Assert", "Assure", "Attach", "Attack", "Attempt",
-    "Attend", "Attract", "Auction", "Avoid", "Avow"
-]
-
 adjective_list = [
     "attractive", "bald", "beautiful", "chubby", "clean", "dazzling", "drab", "elegant", "fancy", "fit",
     "flabby", "glamorous", "gorgeous", "handsome", "long", "magnificent", "muscular", "plain", "plump", "quaint",
     "scruffy"
 ]
 
+def again():
+    while True:
+        user_cont = input("do you want to try again? (Y to continue, anything else to stop)")
+        if user_cont == "Y":
+            main()
+        else:
+            break
 
-"""
-Mad Lib 1: The Great Adventure
+def random_adjective():
+    rand_adjective = str(random.choice(adjective_list))
+    return rand_adjective
 
-Once upon a time, in a [adjective] land, there lived a brave [noun].
-This [noun] was known far and wide for their [adjective] [plural noun]. One day, they embarked on a [adjective] adventure to find the legendary [noun]. 
-Along the way, they encountered a [adjective] [animal], who offered to be their [adjective] companion. Together, they faced many [adjective] challenges and overcame [number] obstacles. 
-In the end, they found the [noun], and it was [adjective] beyond their wildest dreams.
 
-Mad Lib 2: The Surprise Party
+def random_noun():
+    rand_noun = str(random.choice(noun_list))
+    return rand_noun
 
-It was [day of the week], and [name] was planning a surprise party for [friend's name]. [Name] secretly invited [number] [adjective] friends to the party and bought a [color] [noun] as a gift. They decorated the [adjective] [place] with [plural noun] and [adjective] streamers. [Friend's name] was [adjective] surprised when they walked into the room and saw their friends yelling, "Happy [adjective] birthday!" The party was a [adjective] success, and everyone had a [adjective] time.
 
-Mad Lib 3: The Haunted House
-
-One [season], a group of [number] [adjective] friends decided to visit a [adjective] haunted house. 
-As they entered, they heard [spooky sound] coming from the [room]. The [adjective] walls were covered in [noun], and there were [number] [adjective] [animal] roaming around. 
-They cautiously made their way to the [room] where they found a [color] [noun]. 
-Suddenly, the [noun] started [verb ending in -ing], and they all screamed and ran out of the house as fast as their [body part] could carry them.
-
-"""
 def mad_lib_one():
-    print("1")
-
-def mad_lib_two():
-    print("2")
-
-def mad_lib_three():
-    print("3")
-
+    print("Mad Lib 1: The Great Adventure Once upon a time, in a " + random_adjective() + " land, there lived a brave " + random_noun() + ". \n This " + random_noun() + " was known far and wide for their " + random_adjective() + " " + random_noun() + ". \n One day, they embarked on a " + random_adjective() + " adventure to find the legendary " + random_noun() + ".  \n Along the way, they encountered a " + random_adjective(
+    ) + " lion, who offered to be their " + random_adjective() + " companion.\n Together, they faced many " + random_adjective() + " challenges and overcame obstacles.\n In the end, they found the " + random_noun() + ", and it was " + random_adjective() + " beyond their wildest dreams.")
+    again()
 
 def main():
     t = True
     while t:
         try:
             mad_lib_choice = int(input("Enter a number 1 ,2 or 3:"))
-            if mad_lib_choice < 4 and mad_lib_choice > 0:
+            if mad_lib_choice < 2 and mad_lib_choice > 0:
                 if mad_lib_choice == 1:
                     mad_lib_one()
                     break
-                elif mad_lib_choice == 2:
-                    mad_lib_two()
-                    break
-                else:
-                    mad_lib_three()
-                    break
         except Exception as e:
-            print("well the problem is that there is an " + str(e) + " is not a number!")
-            
-
+            print("well the problem is that there is an " +
+                  str(e) + " is not a number!")
 
 
 if __name__ == "__main__":
