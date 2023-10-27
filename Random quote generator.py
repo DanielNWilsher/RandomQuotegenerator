@@ -5,6 +5,7 @@ Finish Time:
 
 Objective: Create a Random Quote Generator with as much creativity as possible.
 
+Chatgpt assisted with creating lists of nouns verbs and adjectives. everything else was written by me.
 
 """
 import random
@@ -56,9 +57,32 @@ They cautiously made their way to the [room] where they found a [color] [noun].
 Suddenly, the [noun] started [verb ending in -ing], and they all screamed and ran out of the house as fast as their [body part] could carry them.
 
 """
+def mad_lib_one():
+    print("")
+
+def mad_lib_two():
+    print("")
+
+def mad_lib_three():
+    print("")
+
 
 def main():
-    return True
+    t = True
+    while t == True:
+        mad_lib_choice = input("Enter a number 1 ,2 or 3:")
+        if mad_lib_choice is int and mad_lib_choice < 4 and mad_lib_choice > 0:
+            if mad_lib_choice == 1:
+                mad_lib_one()
+                t = False
+            elif mad_lib_choice == 2:
+                mad_lib_two()
+                t = False
+            else:
+                mad_lib_three()
+                t = False
+
+
 
 if __name__ == "__main__":
     main()
